@@ -1,0 +1,607 @@
+"config.ml" 3 13 17 "config.ml" 3 13 22
+type(
+  Mirage.stackv4 Mirage.impl
+)
+ident(
+  def stack "config.ml" 4 62 62 "config.ml" 1 0 -1
+)
+"config.ml" 3 13 25 "config.ml" 3 13 40
+type(
+  ?group:string ->
+  ?dhcp_key:bool Mirage.value ->
+  ?net_key:[ `Direct | `Socket ] Mirage.value ->
+  Mirage.console Mirage.impl ->
+  Mirage.network Mirage.impl -> Mirage.stackv4 Mirage.impl
+)
+ident(
+  int_ref Mirage.generic_stackv4 "lib/mirage.mli" 374 9303 9303 "lib/mirage.mli" 378 9412 9458
+)
+"config.ml" 3 13 41 "config.ml" 3 13 56
+type(
+  Mirage.console Mirage.impl
+)
+ident(
+  int_ref Mirage.default_console "lib/mirage.mli" 114 2985 2985 "lib/mirage.mli" 114 2985 3018
+)
+"config.ml" 3 13 57 "config.ml" 3 13 61
+type(
+  Mirage.network Mirage.impl
+)
+ident(
+  int_ref Mirage.tap0 "lib/mirage.mli" 212 5301 5301 "lib/mirage.mli" 212 5301 5323
+)
+"config.ml" 3 13 25 "config.ml" 3 13 61
+call(
+  stack
+)
+type(
+  Mirage.stackv4 Mirage.impl
+)
+"config.ml" 4 62 66 "config.ml" 4 62 75
+type(
+  Mirage.kv_ro Mirage.impl
+)
+ident(
+  def auth_data "config.ml" 5 99 99 "config.ml" 1 0 -1
+)
+"config.ml" 4 62 78 "config.ml" 4 62 91
+type(
+  ?key:[ `Archive | `Crunch | `Fat ] Mirage.value ->
+  string -> Mirage.kv_ro Mirage.impl
+)
+ident(
+  int_ref Mirage.generic_kv_ro "lib/mirage.mli" 194 4867 4867 "lib/mirage.mli" 195 4887 4953
+)
+"config.ml" 4 62 92 "config.ml" 4 62 98
+type(
+  string
+)
+"config.ml" 4 62 78 "config.ml" 4 62 98
+call(
+  stack
+)
+type(
+  Mirage.kv_ro Mirage.impl
+)
+"config.ml" 5 99 103 "config.ml" 5 99 111
+type(
+  Mirage.http Mirage.impl
+)
+ident(
+  def http_srv "config.ml" 7 162 162 "config.ml" 1 0 -1
+)
+"config.ml" 5 99 114 "config.ml" 5 99 125
+type(
+  Mirage.conduit Mirage.impl -> Mirage.http Mirage.impl
+)
+ident(
+  int_ref Mirage.http_server "lib/mirage.mli" 403 9968 9968 "lib/mirage.mli" 403 9968 10010
+)
+"config.ml" 5 99 126 "config.ml" 5 99 128
+type(
+  (Mirage.conduit Mirage.impl -> Mirage.http Mirage.impl) ->
+  Mirage.conduit Mirage.impl -> Mirage.http Mirage.impl
+)
+ident(
+  ext_ref Pervasives.( @@ )
+)
+"config.ml" 5 99 129 "config.ml" 5 99 143
+type(
+  ?tls:bool -> Mirage.stackv4 Mirage.impl -> Mirage.conduit Mirage.impl
+)
+ident(
+  int_ref Mirage.conduit_direct "lib/mirage.mli" 397 9844 9844 "lib/mirage.mli" 397 9844 9906
+)
+"config.ml" 5 99 149 "config.ml" 5 99 154
+type(
+  bool
+)
+"config.ml" 5 99 155 "config.ml" 5 99 160
+type(
+  Mirage.stackv4 Mirage.impl
+)
+ident(
+  int_ref stack "config.ml" 3 13 17 "config.ml" 3 13 22
+)
+"config.ml" 5 99 129 "config.ml" 5 99 160
+call(
+  stack
+)
+type(
+  Mirage.conduit Mirage.impl
+)
+"config.ml" 5 99 114 "config.ml" 5 99 160
+call(
+  stack
+)
+type(
+  Mirage.http Mirage.impl
+)
+"config.ml" 7 162 166 "config.ml" 7 162 170
+type(
+  int Mirage.Key.key
+)
+ident(
+  def port "config.ml" 11 279 279 "config.ml" 1 0 -1
+)
+"config.ml" 8 173 179 "config.ml" 8 173 182
+type(
+  Mirage.Key.Arg.info
+)
+ident(
+  def doc "config.ml" 9 233 235 "config.ml" 9 233 277
+)
+"config.ml" 8 173 185 "config.ml" 8 173 197
+type(
+  ?docs:string ->
+  ?docv:string ->
+  ?doc:string -> ?env:string -> string list -> Mirage.Key.Arg.info
+)
+ident(
+  int_ref Mirage.Key.Arg.info "lib/functoria_key.mli" 82 2914 2916 "lib/functoria_key.mli" 84 2992 3015
+)
+"config.ml" 8 173 203 "config.ml" 8 173 220
+type(
+  string
+)
+"config.ml" 8 173 222 "config.ml" 8 173 228
+type(
+  string
+)
+"config.ml" 8 173 221 "config.ml" 8 173 229
+type(
+  string list
+)
+"config.ml" 8 173 185 "config.ml" 8 173 229
+call(
+  stack
+)
+type(
+  Mirage.Key.Arg.info
+)
+"config.ml" 9 233 240 "config.ml" 9 233 246
+type(
+  string -> int Mirage.Key.Arg.t -> int Mirage.Key.key
+)
+ident(
+  int_ref Mirage.Key.create "lib/functoria_key.mli" 163 5889 5889 "lib/functoria_key.mli" 163 5889 5929
+)
+"config.ml" 9 233 247 "config.ml" 9 233 253
+type(
+  string
+)
+"config.ml" 9 233 259 "config.ml" 9 233 262
+type(
+  ?stage:Mirage.Key.Arg.stage ->
+  int Mirage.Key.Arg.converter ->
+  int -> Mirage.Key.Arg.info -> int Mirage.Key.Arg.t
+)
+ident(
+  int_ref Mirage.Key.Arg.opt "lib/functoria_key.mli" 108 3737 3739 "lib/functoria_key.mli" 108 3737 3798
+)
+"config.ml" 9 233 263 "config.ml" 9 233 266
+type(
+  int Mirage.Key.Arg.converter
+)
+ident(
+  int_ref Mirage.Key.Arg.int "lib/functoria_key.mli" 62 2352 2354 "lib/functoria_key.mli" 62 2352 2376
+)
+"config.ml" 9 233 267 "config.ml" 9 233 271
+type(
+  int
+)
+"config.ml" 9 233 272 "config.ml" 9 233 275
+type(
+  Mirage.Key.Arg.info
+)
+ident(
+  int_ref doc "config.ml" 8 173 179 "config.ml" 8 173 182
+)
+"config.ml" 9 233 259 "config.ml" 9 233 275
+call(
+  stack
+)
+type(
+  int Mirage.Key.Arg.t
+)
+"config.ml" 9 233 240 "config.ml" 9 233 276
+call(
+  stack
+)
+type(
+  int Mirage.Key.key
+)
+"config.ml" 8 173 175 "config.ml" 9 233 277
+type(
+  int Mirage.Key.key
+)
+"config.ml" 11 279 283 "config.ml" 11 279 287
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+ident(
+  def main "config.ml" 19 559 559 "config.ml" 1 0 -1
+)
+"config.ml" 12 290 296 "config.ml" 12 290 305
+type(
+  string list
+)
+ident(
+  def libraries "config.ml" 13 353 355 "config.ml" 17 490 557
+)
+"config.ml" 12 290 310 "config.ml" 12 290 318
+type(
+  string
+)
+"config.ml" 12 290 320 "config.ml" 12 290 332
+type(
+  string
+)
+"config.ml" 12 290 334 "config.ml" 12 290 347
+type(
+  string
+)
+"config.ml" 12 290 308 "config.ml" 12 290 349
+type(
+  string list
+)
+"config.ml" 13 353 359 "config.ml" 13 353 367
+type(
+  string list
+)
+ident(
+  def packages "config.ml" 14 411 413 "config.ml" 17 490 557
+)
+"config.ml" 13 353 372 "config.ml" 13 353 376
+type(
+  string
+)
+"config.ml" 13 353 378 "config.ml" 13 353 390
+type(
+  string
+)
+"config.ml" 13 353 392 "config.ml" 13 353 405
+type(
+  string
+)
+"config.ml" 13 353 370 "config.ml" 13 353 407
+type(
+  string list
+)
+"config.ml" 14 411 417 "config.ml" 14 411 421
+type(
+  Mirage.Key.t list
+)
+ident(
+  def keys "config.ml" 15 449 451 "config.ml" 17 490 557
+)
+"config.ml" 14 411 426 "config.ml" 14 411 438
+type(
+  int Mirage.Key.key -> Mirage.Key.t
+)
+ident(
+  int_ref Mirage.Key.abstract "lib/functoria_key.mli" 186 6474 6474 "lib/functoria_key.mli" 186 6474 6499
+)
+"config.ml" 14 411 439 "config.ml" 14 411 443
+type(
+  int Mirage.Key.key
+)
+ident(
+  int_ref port "config.ml" 7 162 166 "config.ml" 7 162 170
+)
+"config.ml" 14 411 426 "config.ml" 14 411 443
+call(
+  stack
+)
+type(
+  Mirage.Key.t
+)
+"config.ml" 14 411 424 "config.ml" 14 411 445
+type(
+  Mirage.Key.t list
+)
+"config.ml" 15 449 451 "config.ml" 15 449 458
+type(
+  ?packages:string list ->
+  ?libraries:string list ->
+  ?keys:Mirage.key list ->
+  ?deps:Mirage.abstract_impl list ->
+  string ->
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.typ ->
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+ident(
+  int_ref Mirage.foreign "lib/functoria.mli" 111 4029 4029 "lib/functoria.mli" 116 4147 4176
+)
+"config.ml" 16 459 464 "config.ml" 16 459 473
+type(
+  string list
+)
+ident(
+  int_ref libraries "config.ml" 12 290 296 "config.ml" 12 290 305
+)
+"config.ml" 16 459 475 "config.ml" 16 459 483
+type(
+  string list
+)
+ident(
+  int_ref packages "config.ml" 13 353 359 "config.ml" 13 353 367
+)
+"config.ml" 16 459 485 "config.ml" 16 459 489
+type(
+  Mirage.key list
+)
+ident(
+  int_ref keys "config.ml" 14 411 417 "config.ml" 14 411 421
+)
+"config.ml" 17 490 494 "config.ml" 17 490 510
+type(
+  string
+)
+"config.ml" 17 490 512 "config.ml" 17 490 519
+type(
+  Mirage.console Mirage.typ
+)
+ident(
+  int_ref Mirage.console "lib/mirage.mli" 111 2905 2905 "lib/mirage.mli" 111 2905 2929
+)
+"config.ml" 17 490 520 "config.ml" 17 490 523
+type(
+  Mirage.console Mirage.typ ->
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ ->
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.typ
+)
+ident(
+  int_ref Mirage.( @-> ) "lib/functoria.mli" 47 1794 1794 "lib/functoria.mli" 47 1794 1839
+)
+"config.ml" 17 490 524 "config.ml" 17 490 529
+type(
+  Mirage.clock Mirage.typ
+)
+ident(
+  int_ref Mirage.clock "lib/mirage.mli" 65 1828 1828 "lib/mirage.mli" 65 1828 1848
+)
+"config.ml" 17 490 530 "config.ml" 17 490 533
+type(
+  Mirage.clock Mirage.typ ->
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ ->
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ
+)
+ident(
+  int_ref Mirage.( @-> ) "lib/functoria.mli" 47 1794 1794 "lib/functoria.mli" 47 1794 1839
+)
+"config.ml" 17 490 534 "config.ml" 17 490 539
+type(
+  Mirage.kv_ro Mirage.typ
+)
+ident(
+  int_ref Mirage.kv_ro "lib/mirage.mli" 154 3770 3770 "lib/mirage.mli" 154 3770 3790
+)
+"config.ml" 17 490 540 "config.ml" 17 490 543
+type(
+  Mirage.kv_ro Mirage.typ ->
+  (Mirage.http -> Mirage.job) Mirage.typ ->
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ
+)
+ident(
+  int_ref Mirage.( @-> ) "lib/functoria.mli" 47 1794 1794 "lib/functoria.mli" 47 1794 1839
+)
+"config.ml" 17 490 544 "config.ml" 17 490 548
+type(
+  Mirage.http Mirage.typ
+)
+ident(
+  int_ref Mirage.http "lib/mirage.mli" 402 9949 9949 "lib/mirage.mli" 402 9949 9967
+)
+"config.ml" 17 490 549 "config.ml" 17 490 552
+type(
+  Mirage.http Mirage.typ ->
+  Mirage.job Mirage.typ -> (Mirage.http -> Mirage.job) Mirage.typ
+)
+ident(
+  int_ref Mirage.( @-> ) "lib/functoria.mli" 47 1794 1794 "lib/functoria.mli" 47 1794 1839
+)
+"config.ml" 17 490 553 "config.ml" 17 490 556
+type(
+  Mirage.job Mirage.typ
+)
+ident(
+  int_ref Mirage.job "lib/functoria.mli" 61 2210 2210 "lib/functoria.mli" 61 2210 2226
+)
+"config.ml" 17 490 544 "config.ml" 17 490 556
+call(
+  stack
+)
+type(
+  (Mirage.http -> Mirage.job) Mirage.typ
+)
+"config.ml" 17 490 534 "config.ml" 17 490 556
+call(
+  stack
+)
+type(
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ
+)
+"config.ml" 17 490 524 "config.ml" 17 490 556
+call(
+  stack
+)
+type(
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.typ
+)
+"config.ml" 17 490 511 "config.ml" 17 490 557
+call(
+  stack
+)
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.typ
+)
+"config.ml" 15 449 451 "config.ml" 17 490 557
+call(
+  stack
+)
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+"config.ml" 14 411 413 "config.ml" 17 490 557
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+"config.ml" 13 353 355 "config.ml" 17 490 557
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+"config.ml" 12 290 292 "config.ml" 17 490 557
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+"config.ml" 19 559 563 "config.ml" 19 559 565
+type(
+  unit
+)
+"config.ml" 20 568 570 "config.ml" 20 568 578
+type(
+  ?argv:Functoria_app.argv Mirage.impl ->
+  ?tracing:Mirage.tracing Mirage.impl ->
+  ?reporter:Mirage.reporter Mirage.impl ->
+  ?keys:Mirage.Key.t list ->
+  ?libraries:string list ->
+  ?packages:string list -> string -> Mirage.job Mirage.impl list -> unit
+)
+ident(
+  int_ref Mirage.register "lib/mirage.mli" 451 11273 11273 "lib/mirage.mli" 457 11429 11487
+)
+"config.ml" 20 568 579 "config.ml" 20 568 593
+type(
+  string
+)
+"config.ml" 20 568 595 "config.ml" 20 568 599
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl
+)
+ident(
+  int_ref main "config.ml" 11 279 283 "config.ml" 11 279 287
+)
+"config.ml" 20 568 600 "config.ml" 20 568 601
+type(
+  (Mirage.console ->
+   Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job)
+  Mirage.impl ->
+  Mirage.console Mirage.impl ->
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl
+)
+ident(
+  int_ref Mirage.( $ ) "lib/functoria.mli" 67 2372 2372 "lib/functoria.mli" 67 2372 2418
+)
+"config.ml" 20 568 602 "config.ml" 20 568 617
+type(
+  Mirage.console Mirage.impl
+)
+ident(
+  int_ref Mirage.default_console "lib/mirage.mli" 114 2985 2985 "lib/mirage.mli" 114 2985 3018
+)
+"config.ml" 20 568 595 "config.ml" 20 568 617
+call(
+  stack
+)
+type(
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl
+)
+"config.ml" 20 568 618 "config.ml" 20 568 619
+type(
+  (Mirage.clock -> Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl ->
+  Mirage.clock Mirage.impl ->
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl
+)
+ident(
+  int_ref Mirage.( $ ) "lib/functoria.mli" 67 2372 2372 "lib/functoria.mli" 67 2372 2418
+)
+"config.ml" 20 568 620 "config.ml" 20 568 633
+type(
+  Mirage.clock Mirage.impl
+)
+ident(
+  int_ref Mirage.default_clock "lib/mirage.mli" 68 1902 1902 "lib/mirage.mli" 68 1902 1931
+)
+"config.ml" 20 568 595 "config.ml" 20 568 633
+call(
+  stack
+)
+type(
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl
+)
+"config.ml" 20 568 634 "config.ml" 20 568 635
+type(
+  (Mirage.kv_ro -> Mirage.http -> Mirage.job) Mirage.impl ->
+  Mirage.kv_ro Mirage.impl -> (Mirage.http -> Mirage.job) Mirage.impl
+)
+ident(
+  int_ref Mirage.( $ ) "lib/functoria.mli" 67 2372 2372 "lib/functoria.mli" 67 2372 2418
+)
+"config.ml" 20 568 636 "config.ml" 20 568 645
+type(
+  Mirage.kv_ro Mirage.impl
+)
+ident(
+  int_ref auth_data "config.ml" 4 62 66 "config.ml" 4 62 75
+)
+"config.ml" 20 568 595 "config.ml" 20 568 645
+call(
+  stack
+)
+type(
+  (Mirage.http -> Mirage.job) Mirage.impl
+)
+"config.ml" 20 568 646 "config.ml" 20 568 647
+type(
+  (Mirage.http -> Mirage.job) Mirage.impl ->
+  Mirage.http Mirage.impl -> Mirage.job Mirage.impl
+)
+ident(
+  int_ref Mirage.( $ ) "lib/functoria.mli" 67 2372 2372 "lib/functoria.mli" 67 2372 2418
+)
+"config.ml" 20 568 648 "config.ml" 20 568 656
+type(
+  Mirage.http Mirage.impl
+)
+ident(
+  int_ref http_srv "config.ml" 5 99 103 "config.ml" 5 99 111
+)
+"config.ml" 20 568 595 "config.ml" 20 568 656
+call(
+  stack
+)
+type(
+  Mirage.job Mirage.impl
+)
+"config.ml" 20 568 594 "config.ml" 20 568 657
+type(
+  Mirage.job Mirage.impl list
+)
+"config.ml" 20 568 570 "config.ml" 20 568 657
+call(
+  stack
+)
+type(
+  unit
+)
