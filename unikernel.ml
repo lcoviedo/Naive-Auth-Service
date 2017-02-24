@@ -14,7 +14,7 @@ let string_of_stream stream =
   let s = List.map Cstruct.to_string stream in
   return (String.concat "" s)
 
-module Main (MClock: Mirage_types.MCLOCK) (KV: Mirage_kv_lwt.RO) (S: HTTP) = struct 
+module Main (MClock: Mirage_clock_lwt.MCLOCK) (KV: Mirage_kv_lwt.RO) (S: HTTP) = struct 
 
   let start _clock kv http = 
     let check_pwd u p =
@@ -31,7 +31,7 @@ module Main (MClock: Mirage_types.MCLOCK) (KV: Mirage_kv_lwt.RO) (S: HTTP) = str
 					 Server_log.info (fun f -> f "Invalid login:\n user:'%s' and password:'%s' do not match\n" u p); 
 					 return false)
 			| Error e ->
-				(Server_log.info (fun f -> f "Error reading credentials"); return false)
+				(Server_log.warn (fun f -> f "Error reading credentials"); return false)
     in
     let callback (_, cid) request _body =
       let uri = Cohttp.Request.uri request in
